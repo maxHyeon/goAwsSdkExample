@@ -4,12 +4,16 @@ import (
 	"context"
 	"fmt"
 	"log"
+	"net/http"
 
 	"github.com/aws/aws-sdk-go-v2/aws"
 	"github.com/aws/aws-sdk-go-v2/config"
 	"github.com/aws/aws-sdk-go-v2/service/dynamodb"
 )
 
+func GetCallerIdentity(w http.ResponseWriter, r *http.Request) {
+	w.Write([]byte("hello!\n"))
+}
 func sdk() {
 	// Using the SDK's default configuration, loading additional config
 	// and credentials values from the environment variables, shared
